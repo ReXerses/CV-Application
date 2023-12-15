@@ -1,33 +1,28 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { persona } from './dati'
 import './App.css'
+import DettagliPersona from './DettagliPersona'
+import Education from './Education'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [mostraDettagli, setMostraDettagli] = useState(false)
+  const [cvPersona, setCvPersona] = useState(persona);
+
+  function gestisciAggiornamentiCvPersona (aggiornamentoCV) {
+    setCvPersona(aggiornamentoCV);
+  }
+  const onClick= () => setMostraDettagli(!mostraDettagli);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='parteSinistra'>
+        <DettagliPersona cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCvPersona}/>
+        <Education cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCvPersona}  show={mostraDettagli} onClick={onClick}/>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className='parteDestra'>
+        
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }

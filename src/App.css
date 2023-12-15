@@ -1,8 +1,6 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex: 1;
 }
 
 .logo {
@@ -18,19 +16,45 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.parteSinistra {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+  row-gap: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.parteDestra {
+  background-color: #61dafbaa;
+  flex: 1;
+  padding: 2rem;
+}
+
+.infoForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.elencoTitoli {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem;
+}
+
+.corso {
+  border: 1px solid black;
+  border-radius: 16px;
+  padding: 1rem;
 }
 
 .card {
