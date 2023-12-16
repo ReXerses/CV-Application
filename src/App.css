@@ -1,6 +1,13 @@
 #root {
   display: flex;
   flex: 1;
+  background-color: #f3f4f6;
+}
+
+h2, h3 {
+  margin: 0px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 .logo {
@@ -21,40 +28,116 @@
   flex-direction: column;
   flex: 1;
   padding: 2rem;
-  row-gap: 1rem;
+  row-gap: 1.5rem;
 }
 
 .parteDestra {
-  background-color: #61dafbaa;
   flex: 1;
   padding: 2rem;
+}
+
+.buttonTop {
+  display: flex;
+    padding: 1rem;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
+}
+
+.headerInfo {
+  box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
 }
 
 .infoForm {
   display: flex;
   flex-direction: column;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.infoForm > h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.date {
+  display: flex;
+  flex-flow: row wrap;
+  row-gap: 1rem;
+  justify-content: space-between;
+}
+
+.input {
+  display: flex;
+  min-width: 45%;
+  gap: 9px;
+  flex-flow: column wrap;
+}
+
+input, textarea {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 16px;
+  border: none;
+  font-size: 1rem;
+}
+
+.scelteForm{
+  display: flex;
 }
 
 .education {
   display: flex;
-  flex-direction: column;
-  row-gap: 1rem;
-  border: 1px solid black;
-  border-radius: 16px;
-  padding: 1rem;
+    flex-direction: column;
+    row-gap: 1rem;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
+    border-radius: 16px;
+    padding: 1rem;
+}
+
+.education > h2 {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
 }
 
 .elencoTitoli {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  padding: 1rem;
 }
 
 .corso {
-  border: 1px solid black;
-  border-radius: 16px;
-  padding: 1rem;
+  box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
+    border-radius: 16px;
+    padding: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.cv-container {
+  box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
+  height: 29.7cm;
+  width: 21cm;
 }
 
 .card {
