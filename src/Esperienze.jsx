@@ -36,6 +36,7 @@ export default function Esperienze ({show, onClick, cvPersona, gestisciAggiornam
                         <h3>{lavoro.posizione}</h3>
                       </div>
                     ))}
+                    <button className="addBtn">+ Esperienze</button>
                   </div>
                 </div>
               )}

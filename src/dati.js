@@ -3,6 +3,7 @@ export const persona = {
     email: 'mariorossi@live.it',
     numero : '335979746',
     indirizzo: 'Via monza n.27',
+    foto: `public/1.jpg`,
     education: [
         {
         id: 0,
@@ -36,6 +37,5 @@ export const persona = {
         dataFine: '07/2023',
         città: 'Firenze, IT',
         descrizione: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    }],
-    styleCv : 1,
+    }]
 }

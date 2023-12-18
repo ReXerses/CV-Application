@@ -45,6 +45,34 @@ h2, h3 {
     box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
 }
 
+.customize {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.previewLeft {
+  height: 5rem;
+  width: 5rem;
+  background: linear-gradient(90deg,#0e374e 50%,#fff 50%);
+  border-radius: 8px;
+    border: 1px solid white;
+}
+
+.previewTop {
+  height: 5rem;
+  width: 5rem;
+  background: linear-gradient(180deg,#0e374e 50%,#fff 50%);
+  border-radius: 8px;
+    border: 1px solid white;
+}
+
+.dettagliPersonali {
+  background-color: #0e374e;
+  padding: 36px 24px;
+  width: 100%;
+}
+
 .headerInfo {
   box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
   padding: 1.5rem;

@@ -20,6 +20,14 @@ export default function DettagliPersona ({cvPersona, gestisciAggiornamentiCv}) {
         gestisciAggiornamentiCv(aggiornamentoCV);
      }
 
+     function gestisciStatoImmagine (e) {
+         const file = e.target.files[0];
+        const imageUrl = URL.createObjectURL(file);
+
+        const aggiornamentoCV = {...cvPersona, foto: imageUrl};
+        gestisciAggiornamentiCv(aggiornamentoCV);
+     }
+
 
     return (
         <div className="infoForm">
@@ -43,6 +51,11 @@ export default function DettagliPersona ({cvPersona, gestisciAggiornamentiCv}) {
                <div className="input">
                   <label htmlFor="indirizzo">Indirizzo: </label>
                   <input id='indirizzo' type="text" value={cvPersona.indirizzo} placeholder="indirizzo" onChange={gestisciStatoIndirizzo}/>
+               </div>
+               
+               <div className="input">
+                  <label htmlFor="fotoProfilo">Foto Profilo: </label>
+                  <input type="file" id='fotoProfilo' onChange={gestisciStatoImmagine} />
                </div>
             </div>
         </div>

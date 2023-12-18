@@ -37,6 +37,7 @@ export default function Education ({show, onClick, cvPersona, gestisciAggiorname
                         <h3>{corso.laurea}</h3>
                       </div>
                     ))}
+                    <button>+ Education</button>
                   </div>
                 </div>
               )}
