@@ -2,13 +2,13 @@ export default function FormEsperienze ({cvPersona, gestisciAggiornamentiCv, ind
     let lavori = cvPersona.esperienze;
 
     function gestisciAzienda (e) {
-        lavori[indiceLavoro].scuola = e.target.value;
+        lavori[indiceLavoro].azienda = e.target.value;
         const aggiornamentoCV = {...cvPersona, esperienze: lavori};
         gestisciAggiornamentiCv(aggiornamentoCV);
      }
 
      function gestisciPosizione (e) {
-        lavori[indiceLavoro].laurea = e.target.value;
+        lavori[indiceLavoro].posizione = e.target.value;
         const aggiornamentoCV = {...cvPersona, esperienze: lavori};
         gestisciAggiornamentiCv(aggiornamentoCV);
      }

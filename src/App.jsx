@@ -5,6 +5,7 @@ import DettagliPersona from './DettagliPersona'
 import Education from './Education'
 import Esperienze from './Esperienze'
 import Customize from './Customize'
+import PreviewCv from '../PreviewCv'
 
 function App() {
   const [mostraDettagliEd, setMostraDettagliEd] = useState(false);
@@ -12,6 +13,16 @@ function App() {
   const [mostraDettagliCust, setMostraDettagliCust] = useState(false);
   const [mostraPreview, setMostraPreview] = useState(true);
   const [cvPersona, setCvPersona] = useState(persona);
+
+  const CV_VUOTO = {
+    fullName: '',
+    email: '',
+    numero : '',
+    indirizzo: '',
+    foto: ``,
+    education: [],
+    esperienze: []
+}
 
   const [stileCv, setStileCv] = useState(1); //1 left e 2 top
 
@@ -26,12 +37,15 @@ function App() {
   const onClickLav= () => setMostraDettagliLav(!mostraDettagliLav);
   const onClickCust= () => setMostraDettagliCust(!mostraDettagliCust);
   const onClickPrev= () => setMostraPreview(!mostraPreview);
+  const onClickCaricaEsempio= () => setCvPersona(persona);
+  const onClickCancellaCv= () => setCvPersona(CV_VUOTO);
 
   return (
     <>
       <div className='parteSinistra'>
         <div className='buttonTop'>
-          <button id='darkMode'>DarkMode</button>
+          <button id='resetCv' onClick={onClickCancellaCv}>CV Reset</button>
+          <button id='esempioCv' onClick={onClickCaricaEsempio}>Carica Esempio</button>
           <button id='preview' onClick={onClickPrev}>Preview</button>
           <button id='pdf'>Save pdf</button>
         </div>
@@ -44,6 +58,7 @@ function App() {
       {mostraPreview ? (
         <div className='parteDestra'>
           <div className='cv-container'>
+            <PreviewCv cvPersona={cvPersona} stileCv={stileCv}  />
             
           </div>
         </div>
