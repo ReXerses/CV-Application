@@ -127,6 +127,7 @@ input, textarea {
 
 .scelteForm{
   display: flex;
+  justify-content: space-between;
 }
 
 .education {

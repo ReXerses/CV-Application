@@ -1,29 +1,41 @@
 import { useState } from "react";
 import FormEducation from "./FormEducation";
-
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Education ({show, onClick, cvPersona, gestisciAggiornamentiCv}) {
     const [isAperto, setAperto] = useState(false);
     const [corsoCliccato, setCorsoCliccato] = useState(null);
 
-    const onClickEducation = (idCorso) => {
-        setCorsoCliccato(idCorso);
+    const onClickEducation = (indiceCorso) => {
+        setCorsoCliccato(indiceCorso);
         setAperto(!isAperto);
     };
 
     let corsiDiStudio = cvPersona.education;
 
+    function aggiungiCorsoDiStudi () {
+      corsiDiStudio.push({
+        id: uuidv4(),
+        scuola: '',
+        laurea: '',
+        dataInizio : '',
+        dataFine: '',
+        città: ''
+      });
+      const aggiornamentoCV = {...cvPersona, education: corsiDiStudio};
+      gestisciAggiornamentiCv(aggiornamentoCV);
+    }
 
     if (show) {
 
         return (
             <div>
-              {isAperto ? (
+              {isAperto  ? (
                 <div className="infoForm">
                   <h2>
                     Education <button onClick={onClick}>Apri/Chiudi</button>
                   </h2>
-                  <FormEducation cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCv} idCorso={corsoCliccato}/>
+                  <FormEducation cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCv} indiceCorso={corsoCliccato} onClickEducation={onClickEducation} idCorso={corsiDiStudio[corsoCliccato].id} />
                 </div>
               ) : (
                 <div className="education">
@@ -37,7 +49,7 @@ export default function Education ({show, onClick, cvPersona, gestisciAggiorname
                         <h3>{corso.laurea}</h3>
                       </div>
                     ))}
-                    <button>+ Education</button>
+                    <button className="addBtn" onClick={aggiungiCorsoDiStudi}>+ Education</button>
                   </div>
                 </div>
               )}

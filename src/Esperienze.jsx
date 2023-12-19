@@ -1,17 +1,32 @@
 import FormEsperienze from "./FormEsperienze";
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
+
 
 export default function Esperienze ({show, onClick, cvPersona, gestisciAggiornamentiCv}) {
     const [isAperto, setAperto] = useState(false);
     const [lavoroCliccato, setLavoroCliccato] = useState(null);
 
-    const onClickEsperienze = (idLavoro) => {
-        setLavoroCliccato(idLavoro);
+    const onClickEsperienze = (index) => {
+        setLavoroCliccato(index);
         setAperto(!isAperto);
     };
 
     let esperienzeLavorative = cvPersona.esperienze;
 
+    function aggiungiEsperienza () {
+      esperienzeLavorative.push({
+        id:uuidv4(),
+        azienda: '',
+        posizione: '',
+        dataInizio : '',
+        dataFine: '',
+        città: '',
+        descrizione: ''
+    });
+      const aggiornamentoCV = {...cvPersona, esperienze: esperienzeLavorative};
+      gestisciAggiornamentiCv(aggiornamentoCV);
+    }
 
     if (show) {
 
@@ -22,7 +37,7 @@ export default function Esperienze ({show, onClick, cvPersona, gestisciAggiornam
                   <h2>
                     Esperienze <button onClick={onClick}>Apri/Chiudi</button>
                   </h2>
-                  <FormEsperienze cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCv} idLavoro={lavoroCliccato}/>
+                  <FormEsperienze cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCv} indiceLavoro={lavoroCliccato} onClickEsperienze={onClickEsperienze} idLavoro={esperienzeLavorative[lavoroCliccato].id} />
                 </div>
               ) : (
                 <div className="education">
@@ -31,12 +46,12 @@ export default function Esperienze ({show, onClick, cvPersona, gestisciAggiornam
                   </h2>
                   <div className="elencoTitoli">
                     {esperienzeLavorative.map((lavoro,index) => (
-                      <div className="corso" key={lavoro.azienda} onClick={() => onClickEsperienze(index)}>
+                      <div className="corso" key={lavoro.id} onClick={() => onClickEsperienze(index)}>
                         <h2>{lavoro.azienda}</h2>
                         <h3>{lavoro.posizione}</h3>
                       </div>
                     ))}
-                    <button className="addBtn">+ Esperienze</button>
+                    <button className="addBtn" onClick={aggiungiEsperienza}>+ Esperienze</button>
                   </div>
                 </div>
               )}

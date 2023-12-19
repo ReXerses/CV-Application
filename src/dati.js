@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const persona = {
     fullName: 'Mario Rossi',
     email: 'mariorossi@live.it',
@@ -6,14 +8,14 @@ export const persona = {
     foto: `public/1.jpg`,
     education: [
         {
-        id: 0,
+        id: uuidv4(),
         scuola: 'Università Federico II',
         laurea: 'Scienze informatiche',
         dataInizio : '08/2020',
         dataFine: 'presente',
         città: 'Napoli, IT'
     },  {
-        id: 1,
+        id: uuidv4(),
         scuola: 'Università Telematica Pegaso',
         laurea: 'Informatica per Aziende digitali',
         dataInizio : '08/2022',
@@ -21,7 +23,7 @@ export const persona = {
         città: ''
     }],
     esperienze: [{
-        id:0,
+        id:uuidv4(),
         azienda: 'Google',
         posizione: 'Porta Caffè',
         dataInizio : '08/2022',
@@ -30,7 +32,7 @@ export const persona = {
         descrizione: 'Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese una cassetta di caratteri e li assemblò per preparare un testo campione.'
     },
     {
-        id:0,
+        id:uuidv4(),
         azienda: 'Apple',
         posizione: 'NDA',
         dataInizio : '08/2022',

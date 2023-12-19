@@ -10,9 +10,10 @@ function App() {
   const [mostraDettagliEd, setMostraDettagliEd] = useState(false);
   const [mostraDettagliLav, setMostraDettagliLav] = useState(false);
   const [mostraDettagliCust, setMostraDettagliCust] = useState(false);
+  const [mostraPreview, setMostraPreview] = useState(true);
   const [cvPersona, setCvPersona] = useState(persona);
 
-  const [stileCv, setStileCv] = useState(1);
+  const [stileCv, setStileCv] = useState(1); //1 left e 2 top
 
   function gestisciStileCv (id) {
     setStileCv(id);
@@ -24,15 +25,14 @@ function App() {
   const onClickEd= () => setMostraDettagliEd(!mostraDettagliEd);
   const onClickLav= () => setMostraDettagliLav(!mostraDettagliLav);
   const onClickCust= () => setMostraDettagliCust(!mostraDettagliCust);
-
-  console.log(cvPersona);
+  const onClickPrev= () => setMostraPreview(!mostraPreview);
 
   return (
     <>
       <div className='parteSinistra'>
         <div className='buttonTop'>
           <button id='darkMode'>DarkMode</button>
-          <button id='preview'>Preview</button>
+          <button id='preview' onClick={onClickPrev}>Preview</button>
           <button id='pdf'>Save pdf</button>
         </div>
         <Customize show={mostraDettagliCust} onClick={onClickCust} gestisciStileCv={gestisciStileCv} />
@@ -41,11 +41,15 @@ function App() {
         <Esperienze cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCvPersona}  show={mostraDettagliLav} onClick={onClickLav}/>
       </div>
 
-      <div className='parteDestra'>
-        <div className='cv-container'>
-          
+      {mostraPreview ? (
+        <div className='parteDestra'>
+          <div className='cv-container'>
+            
+          </div>
         </div>
-      </div>
+      ) : (
+        null
+      )}
     </>
   )
 }
