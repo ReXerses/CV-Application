@@ -2,16 +2,17 @@
   display: flex;
   flex: 1;
   background-color: #f3f4f6;
+  overflow-y: hidden;
 }
 
 h2, h3 {
   margin: 0px;
-  padding-bottom: 0.7rem;
-  padding-top: 0.7rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.0rem;
 }
 
 p {
@@ -22,8 +23,8 @@ p {
 h4, h5 {
   font-weight: normal;
   margin: 0px;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
+  padding-bottom: 0.2rem;
+  padding-top: 0.2rem;
 }
 
 .logo {
@@ -40,8 +41,12 @@ h4, h5 {
 }
 
 .icone {
-  height: 30px;
-  filter: invert(1);
+  height: 25px;
+}
+
+.listaInformazioni {
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .informazioni {
@@ -49,6 +54,7 @@ h4, h5 {
   align-items: center;
   column-gap: 10px;
 }
+
 
 .parteSinistra {
   display: flex;
@@ -70,6 +76,7 @@ h4, h5 {
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
+    column-gap: 1rem;
 }
 
 .customize {
@@ -95,9 +102,9 @@ h4, h5 {
 }
 
 .fotoProfilo {
-  height: 12rem;
+  height: 11rem;
   border-radius: 50%;
-  width: 12rem;
+  width: 11rem;
 }
 
 .sezione2{
@@ -107,18 +114,19 @@ h4, h5 {
   flex: 3;
 }
 
+.sezione2Top {
+  display: flex;
+  padding: 2rem;
+  flex: 3;
+  column-gap: 2rem;
+}
+
 
 .curriculum {
   background-color: #fff;
   height: 100%;
-  position: sticky;
-  top: 0;
   width: 100%;
   display: flex;
-}
-
-.left {
-  
 }
 
 .nomePersona {
@@ -140,6 +148,18 @@ h4, h5 {
     flex-direction: column;
     row-gap: 1rem;
     flex: 2;
+    align-items: center;
+}
+
+.dettagliPersonaliTop {
+  background-color: #0e374e;
+  padding: 36px 0px;
+  width: 100%;
+  color: white;
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .headerInfo {
@@ -224,6 +244,10 @@ input, textarea {
   row-gap: 1rem;
 }
 
+.elencoTop {
+  flex: 1;
+}
+
 .corso {
   box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
     border-radius: 16px;
@@ -234,8 +258,17 @@ input, textarea {
 
 .cv-container {
   box-shadow: 0 13px 27px -5px rgba(50,50,93,.1), 0 8px 16px -8px rgba(0,0,0,.25);
-  height: 29.7cm;
-  width: 21cm;
+  height: 28.46cm;
+  width: 22cm;
+  display: flex;
+}
+
+.top {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .card {
@@ -244,4 +277,26 @@ input, textarea {
 
 .read-the-docs {
   color: #888;
+}
+
+.openBtn {
+  padding: 1rem;
+  background-image: url('/open-close.svg');
+}
+
+.openBtn.active {
+  transform:rotate(180deg)
+}
+
+.iconeTop {
+  height: 30px;
+}
+
+.bottoneTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  row-gap: 0.2rem;
 }

@@ -35,14 +35,14 @@ export default function Esperienze ({show, onClick, cvPersona, gestisciAggiornam
               {isAperto ? (
                 <div className="infoForm">
                   <h2>
-                    Esperienze <button onClick={onClick}>Apri/Chiudi</button>
+                    Esperienze <button  className={`openBtn ${show ? 'active' : ''}`} onClick={onClick}></button>
                   </h2>
                   <FormEsperienze cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCv} indiceLavoro={lavoroCliccato} onClickEsperienze={onClickEsperienze} idLavoro={esperienzeLavorative[lavoroCliccato].id} />
                 </div>
               ) : (
                 <div className="education">
                   <h2>
-                    Esperienze <button onClick={onClick}>Apri/Chiudi</button>
+                    Esperienze <button  className={`openBtn ${show ? 'active' : ''}`} onClick={onClick}></button>
                   </h2>
                   <div className="elencoTitoli">
                     {esperienzeLavorative.map((lavoro,index) => (
@@ -59,7 +59,7 @@ export default function Esperienze ({show, onClick, cvPersona, gestisciAggiornam
           );
 
     } else {
-        return <h2 className="headerInfo">Esperienze <button onClick={onClick}>Apri/Chiudi</button> </h2>
+        return <h2 className="headerInfo">Esperienze <button  className="openBtn" onClick={onClick}></button> </h2>
     }
 
 }

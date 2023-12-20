@@ -6,7 +6,7 @@ export default function Customize ({show, onClick, gestisciStileCv }) {
             <div>
                 <div className="education">
                   <h2>
-                    Customize <button onClick={onClick}>Apri/Chiudi</button>
+                    Layout <button  className={`openBtn ${show ? 'active' : ''}`} onClick={onClick}></button>
                   </h2>
                   <div className="customize">
                     <button className="previewLeft" onClick={() => gestisciStileCv(1)}></button>    
@@ -17,6 +17,6 @@ export default function Customize ({show, onClick, gestisciStileCv }) {
           );
 
     } else {
-        return <h2 className="headerInfo">Customize <button onClick={onClick}>Apri/Chiudi</button> </h2>
+        return <h2 className="headerInfo">Layout <button className="openBtn"  onClick={onClick}></button> </h2>
     }
 }

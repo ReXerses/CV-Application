@@ -33,14 +33,14 @@ export default function Education ({show, onClick, cvPersona, gestisciAggiorname
               {isAperto  ? (
                 <div className="infoForm">
                   <h2>
-                    Education <button onClick={onClick}>Apri/Chiudi</button>
+                    Education <button className= {`openBtn ${show ? 'active' : ''}`}  onClick={onClick}></button>
                   </h2>
                   <FormEducation cvPersona={cvPersona} gestisciAggiornamentiCv={gestisciAggiornamentiCv} indiceCorso={corsoCliccato} onClickEducation={onClickEducation} idCorso={corsiDiStudio[corsoCliccato].id} />
                 </div>
               ) : (
                 <div className="education">
                   <h2>
-                    Education <button onClick={onClick}>Apri/Chiudi</button>
+                    Education <button  className={`openBtn ${show ? 'active' : ''}`} onClick={onClick}></button>
                   </h2>
                   <div className="elencoTitoli">
                     {corsiDiStudio.map((corso,index) => (
@@ -57,7 +57,7 @@ export default function Education ({show, onClick, cvPersona, gestisciAggiorname
           );
 
     } else {
-        return <h2 className="headerInfo">Education <button onClick={onClick}>Apri/Chiudi</button> </h2>
+        return <h2 className="headerInfo">Education <button className="openBtn" onClick={onClick}></button> </h2>
     }
 
 }
