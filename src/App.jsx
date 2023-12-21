@@ -98,7 +98,7 @@ function App() {
             <img className='iconeTop' src="/eye.svg" alt="preview on/off"/>
             Preview
           </button>
-            <button id='pdf' className='bottoneTop' onClick={openPDF}>
+            <button  disabled={!mostraPreview} id='pdf' className='bottoneTop' onClick={openPDF}>
               <img className='iconeTop' src="/save.svg" alt="save pdf"/>
               PDF
             </button>

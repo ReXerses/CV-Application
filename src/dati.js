@@ -5,7 +5,7 @@ export const persona = {
     email: 'mariorossi@live.it',
     numero : '335979746',
     indirizzo: 'Via monza n.27',
-    foto: `/1.jpg`,
+    foto: `/old.png`,
     education: [
         {
         id: uuidv4(),
