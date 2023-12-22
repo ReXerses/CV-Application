@@ -112,6 +112,7 @@ h4, h5 {
   flex-direction: column;
   padding: 2rem;
   flex: 3;
+  color: black;
 }
 
 .sezione2Top {
@@ -119,14 +120,7 @@ h4, h5 {
   padding: 2rem;
   flex: 3;
   column-gap: 2rem;
-}
-
-
-.curriculum {
-  background-color: #fff;
-  height: 100%;
-  width: 100%;
-  display: flex;
+  color: black;
 }
 
 .nomePersona {
@@ -269,6 +263,13 @@ input, textarea {
   width: 100%;
   display: flex;
   flex-flow: column wrap;
+}
+
+.curriculum {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
 }
 
 .card {
