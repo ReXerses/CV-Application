@@ -206,6 +206,7 @@ input, textarea {
   border-radius: 16px;
   border: none;
   font-size: 1rem;
+  color: black;
 }
 
 .scelteForm{
@@ -300,5 +301,6 @@ input, textarea {
   align-items: center;
   width: 5rem;
   row-gap: 0.2rem;
+  color: black;
 }
 
