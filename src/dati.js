@@ -16,8 +16,8 @@ export const persona = {
         città: 'Napoli, IT'
     },  {
         id: uuidv4(),
-        scuola: 'Università Telematica Pegaso',
-        laurea: 'Informatica per Aziende digitali',
+        scuola: 'Università della strada',
+        laurea: 'Furti in sella ad SH 300 rubato',
         dataInizio : '08/2022',
         dataFine: '11/2023',
         città: ''
